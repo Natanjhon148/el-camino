@@ -1,0 +1,178 @@
+create database el_camino;
+use el_camino;
+ 
+-- Tabla de empleados
+CREATE TABLE empleados (
+    ID_Empleado INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Apellido VARCHAR(100) NOT NULL,
+    Cargo VARCHAR(50),
+    Correo VARCHAR(100),
+    Telefono VARCHAR(15)
+);
+ 
+-- Tabla de cuentas de empleados
+CREATE TABLE cuenta_empleado (
+    ID_Empleado INT PRIMARY KEY,
+    Usuario VARCHAR(50) NOT NULL UNIQUE,
+    Contrasena VARCHAR(255) NOT NULL,
+    FOREIGN KEY (ID_Empleado) REFERENCES empleados(ID_Empleado)
+);
+ 
+-- Tabla de clientes
+CREATE TABLE cliente (
+    ID_Cliente INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(100) NOT NULL,
+    Correo VARCHAR(100),
+    Telefono VARCHAR(15)
+);
+ 
+-- Tabla de cuentas de clientes
+CREATE TABLE cuenta_cliente (
+    ID_Cliente INT PRIMARY KEY,
+    Usuario VARCHAR(50) NOT NULL UNIQUE,
+    Contrasena VARCHAR(255) NOT NULL,
+    FOREIGN KEY (ID_Cliente) REFERENCES cliente(ID_Cliente)
+);
+ 
+-- Tabla de productos
+CREATE TABLE producto (
+ID_Producto INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre VARCHAR(255) NOT NULL,
+    Precio DECIMAL(10, 2) NOT NULL,
+    Stock INT NOT NULL,
+    Imagen VARCHAR(255) DEFAULT NULL
+);
+ 
+ 
+-- Tabla de inventario
+CREATE TABLE movimiento_stock (
+    ID_Movimiento INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Producto INT NOT NULL,
+    Tipo_Movimiento ENUM('Entrada', 'Salida', 'Ajuste') NOT NULL,
+    Cantidad INT NOT NULL,
+    Fecha_Movimiento TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Descripcion TEXT,
+    FOREIGN KEY (ID_Producto) REFERENCES producto(ID_Producto)
+);
+SHOW TABLES LIKE 'carrito';
+ 
+ 
+-- Tabla para carritos de compra
+CREATE TABLE carrito (
+    ID_Carrito INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Cliente INT NOT NULL,
+    Fecha_Creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Estado ENUM('En progreso', 'Completado') DEFAULT 'En progreso',
+    Subtotal DECIMAL(10, 2) DEFAULT 0.00,
+    Descuento DECIMAL(10, 2) DEFAULT 0.00,
+    Total DECIMAL(10, 2) DEFAULT 0.00,
+    FOREIGN KEY (ID_Cliente) REFERENCES cliente(ID_Cliente)
+);
+ 
+-- Relación entre carritos y productos
+CREATE TABLE carrito_producto (
+    ID_Carrito INT NOT NULL,
+    ID_Producto INT NOT NULL,
+    Cantidad INT NOT NULL,
+    Precio_Subtotal DECIMAL(10, 2),
+    PRIMARY KEY (ID_Carrito, ID_Producto),
+    FOREIGN KEY (ID_Carrito) REFERENCES carrito(ID_Carrito) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Producto) REFERENCES producto(ID_Producto)
+);
+ 
+ 
+-- Tabla de pagos por QR
+CREATE TABLE pago_qr (
+    ID_Pago INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Carrito INT NOT NULL,
+    Codigo_QR VARCHAR(255) NOT NULL,
+    Estado ENUM('Pendiente', 'Pagado', 'Fallido') DEFAULT 'Pendiente',
+    Fecha_Pago TIMESTAMP,
+    FOREIGN KEY (ID_Carrito) REFERENCES carrito(ID_Carrito)
+);
+ 
+-- Tabla de pedidos
+CREATE TABLE pedido (
+    ID_Pedido INT AUTO_INCREMENT PRIMARY KEY,
+    Fecha DATE NOT NULL,
+    Estado VARCHAR(20),
+    Descripcion TEXT,
+    Total DECIMAL(10, 2) NOT NULL,
+    ID_Cliente INT NOT NULL,
+    FOREIGN KEY (ID_Cliente) REFERENCES cliente(ID_Cliente)
+);
+ 
+-- Tabla de relación entre pedidos y productos
+CREATE TABLE pedidoproducto (
+    ID_Pedido INT NOT NULL,
+    ID_Producto INT NOT NULL,
+    Cantidad INT NOT NULL,
+    PRIMARY KEY (ID_Pedido, ID_Producto),
+    FOREIGN KEY (ID_Pedido) REFERENCES pedido(ID_Pedido),
+    FOREIGN KEY (ID_Producto) REFERENCES producto(ID_Producto)
+);
+ 
+-- Tabla de métodos de pago
+CREATE TABLE metodos_pago (
+    ID_Metodo INT AUTO_INCREMENT PRIMARY KEY,
+    Nombre_Metodo VARCHAR(50) NOT NULL,
+    Descripcion TEXT
+);
+ 
+-- Tabla de pagos
+CREATE TABLE pagos (
+    ID_Pago INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Pedido INT NOT NULL,
+    ID_Metodo INT NOT NULL,
+    Fecha_Pago DATE NOT NULL,
+    Monto DECIMAL(10, 2) NOT NULL,
+    Estado VARCHAR(20),
+    FOREIGN KEY (ID_Pedido) REFERENCES pedido(ID_Pedido),
+    FOREIGN KEY (ID_Metodo) REFERENCES metodos_pago(ID_Metodo)
+);
+ 
+-- Tabla para cuentas de administradores
+CREATE TABLE cuenta_administrador (
+    ID_Administrador INT AUTO_INCREMENT PRIMARY KEY,
+    Usuario VARCHAR(50) NOT NULL UNIQUE,
+    Contrasena VARCHAR(255) NOT NULL,
+    Nombre VARCHAR(100) NOT NULL
+);
+ 
+-- Tabla para registrar sesiones de empleados
+CREATE TABLE registro_sesiones_empleados (
+    ID_Sesion INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Empleado INT NOT NULL,
+    Fecha_Inicio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Fecha_Cierre TIMESTAMP NULL,
+    FOREIGN KEY (ID_Empleado) REFERENCES empleados(ID_Empleado)
+);
+ 
+ 
+CREATE TABLE registro_sesiones_clientes (
+    ID_Sesion INT AUTO_INCREMENT PRIMARY KEY,
+    ID_Cliente INT NOT NULL,
+    Fecha_Inicio TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    Fecha_Cierre TIMESTAMP NULL DEFAULT NULL,
+    FOREIGN KEY (ID_Cliente) REFERENCES cliente(ID_Cliente)
+);
+ 
+CREATE TABLE proveedores (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255) NOT NULL,
+    contacto VARCHAR(255),
+    telefono VARCHAR(15)
+);
+ 
+ 
+-- Trigger para actualizar stock al completar el pedido
+DELIMITER $$
+CREATE TRIGGER actualizar_stock AFTER INSERT ON carrito_producto
+FOR EACH ROW
+BEGIN
+    UPDATE producto
+    SET Stock = Stock - NEW.Cantidad
+    WHERE ID_Producto = NEW.ID_Producto;
+END$$
+DELIMITER ;
