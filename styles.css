@@ -1,0 +1,133 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    padding-top: 80px;
+}
+ 
+/* Navbar */
+.navbar {
+    background: linear-gradient(90deg, #6c63ff, #48c6ef);
+}
+ 
+.logo {
+    height: 50px;
+}
+ 
+.brand-name {
+    font-family: 'Lobster', cursive;
+    font-size: 2rem;
+    color: white;
+}
+ 
+.navbar-nav .nav-link {
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+ 
+.navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+ 
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Inicio/fondo.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+ 
+.hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    line-height: 1.3;
+}
+ 
+.hero-title .highlight {
+    color: #ffc107;
+}
+ 
+.floating-shapes {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+    animation: float 6s infinite ease-in-out;
+}
+ 
+.shape {
+    background: #ffc107;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    opacity: 0.7;
+}
+ 
+.shape-triangle {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 30px solid #6c63ff;
+}
+ 
+.shape-rectangle {
+    border-radius: 5px;
+    width: 40px;
+    height: 20px;
+    background: #48c6ef;
+}
+ 
+@keyframes float {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+ 
+/* Services Section */
+.services-section {
+    background: #f7f9fc;
+    padding: 60px 0;
+}
+ 
+.services-icon-wrapper {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #6c63ff;
+}
+ 
+/* Footer */
+.footer-bg {
+    background: #222;
+}
+ 
+.footer-bg .bi {
+    transition: transform 0.3s ease;
+}
+ 
+.footer-bg .bi:hover {
+    transform: scale(1.3);
+    color: #ffc107;
+}
+ 
+/*mapa*/
+ 
+.maps-section {
+    background-color: #f8f9fa;
+    padding: 50px 0;
+}
+ 
+.maps-container iframe {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

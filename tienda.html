@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - Imprenta & Serigrafía "El Camino"</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tienda/tienda.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">IMPRENTA EL CAMINO</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nuestra-imprenta.html">Nuestra Imprenta</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="tienda.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="como-comprar.html">Cómo Comprar</a></li>
+                        <li class="nav-item"><a class="nav-link cta-btn" href="login.php">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="tienda/01.jpg" class="card-img-top" alt="Tarjetas de presentación">
+                <div class="card-body">
+                    <h5 class="card-title">Tarjetas de Presentación</h5>
+                    <p class="card-text">Paquete de 500 - 250 Bs</p>
+                    <button class="btn btn-primary btn-comprar" data-bs-toggle="modal" data-bs-target="#loginModal">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="tienda/02.jpg" class="card-img-top" alt="Flyers Publicitarios">
+                <div class="card-body">
+                    <h5 class="card-title">Flyers Publicitarios</h5>
+                    <p class="card-text">1000 unidades - 300 Bs</p>
+                    <button class="btn btn-primary btn-comprar" data-bs-toggle="modal" data-bs-target="#loginModal">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="tienda/03.jpg" class="card-img-top" alt="Stickers Personalizados">
+                <div class="card-body">
+                    <h5 class="card-title">Stickers Personalizados</h5>
+                    <p class="card-text">100 unidades - 120 Bs</p>
+                    <button class="btn btn-primary btn-comprar" data-bs-toggle="modal" data-bs-target="#loginModal">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="tienda/04.jpg" class="card-img-top" alt="Banners Publicitarios">
+                <div class="card-body">
+                    <h5 class="card-title">Banners Publicitarios</h5>
+                    <p class="card-text">Desde 350 Bs</p>
+                    <button class="btn btn-primary btn-comprar" data-bs-toggle="modal" data-bs-target="#loginModal">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 5 -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="tienda/05.jpg" class="card-img-top" alt="Camisetas Personalizadas">
+                <div class="card-body">
+                    <h5 class="card-title">Camisetas Personalizadas</h5>
+                    <p class="card-text">Precio unitario - 80 Bs</p>
+                    <button class="btn btn-primary btn-comprar" data-bs-toggle="modal" data-bs-target="#loginModal">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 6 -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="tienda/06.jpg" class="card-img-top" alt="Calendarios Personalizados">
+                <div class="card-body">
+                    <h5 class="card-title">Calendarios Personalizados</h5>
+                    <p class="card-text">Paquete de 50 - 300 Bs</p>
+                    <button class="btn btn-primary btn-comprar" data-bs-toggle="modal" data-bs-target="#loginModal">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 7 -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="tienda/7.jpg" class="card-img-top" alt="Pósters Personalizados">
+                <div class="card-body">
+                    <h5 class="card-title">Pósters Personalizados</h5>
+                    <p class="card-text">Desde 200 Bs</p>
+                    <button class="btn btn-primary btn-comprar" data-bs-toggle="modal" data-bs-target="#loginModal">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 8 -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="tienda/08.jpg" class="card-img-top" alt="Cuadernos Personalizados">
+                <div class="card-body">
+                    <h5 class="card-title">Cuadernos Personalizados</h5>
+                    <p class="card-text">Precio unitario - 70 Bs</p>
+                    <button class="btn btn-primary btn-comprar" data-bs-toggle="modal" data-bs-target="#loginModal">Comprar</button>
+                </div>
+            </div>
+        </div>
+        <!-- Product 9 -->
+        <div class="col-md-4">
+            <div class="card h-100">
+                <img src="tienda/09.jpg" class="card-img-top" alt="Tazas Personalizadas">
+                <div class="card-body">
+                    <h5 class="card-title">Tazas Personalizadas</h5>
+                    <p class="card-text">Precio unitario - 50 Bs</p>
+                    <button class="btn btn-primary btn-comprar" data-bs-toggle="modal" data-bs-target="#loginModal">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Modal de Inicio de Sesión -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">Inicio de Sesión Requerido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Debe iniciar sesión para realizar compras. Por favor, haga clic en el botón de abajo para acceder a su cuenta.</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="login.php" class="btn btn-primary">Iniciar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-bg py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 ImprentaWeb. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar-light {
+    background: linear-gradient(135deg, #e63946, #1d3557);
+    padding: 15px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-light .navbar-brand img {
+    height: 60px;
+}
+
+.navbar-light .navbar-brand span {
+    color: #f1faee;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #f1faee;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0 10px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #ffba08;
+    transform: scale(1.1);
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: #ffd166;
+    border-bottom: 2px solid #ffd166;
+}
+
+.navbar-light .cta-btn {
+    background-color: #ffba08;
+    color: #1d3557;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar-light .cta-btn:hover {
+    background-color: #ffd166;
+    transform: scale(1.1);
+}
+
+
+
+
+.brand-text {
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    font-size: 1.5rem; /* Tamaño de fuente */
+    font-weight: 700; /* Negrita */
+    color: #ffba08; /* Color amarillo vibrante */
+    text-transform: uppercase; /* Todo en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra de texto */
+    transition: transform 0.3s ease, color 0.3s ease; /* Animación */
+}
+
+.brand-text:hover {
+    color: #ffd166; /* Cambio de color al pasar el mouse */
+    transform: scale(1.1); /* Animación al pasar el mouse */
+}
+
+/* Hero Section */
+.hero-image {
+    height: 600px;
+    object-fit: cover;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 30px 50px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-text .btn {
+    background-color: #ffba08;
+    color: #1d3557;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    transition: all 0.3s ease;
+}
+
+.hero-text .btn:hover {
+    background-color: #ffd166;
+    transform: translateY(-5px);
+}
+
+/* Services Section */
+#services {
+    background: linear-gradient(135deg, #1d3557, #457b9d);
+    color: white;
+    padding: 80px 20px;
+}
+
+#services .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.card {
+    border: none;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-body h5 {
+    color: #e63946;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* About Us Section */
+#about-us {
+    background: #f1faee;
+    padding: 80px 20px;
+}
+
+#about-us h2 {
+    font-size: 2.5rem;
+    color: #1d3557;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#about-us p {
+    font-size: 1.1rem;
+    color: #457b9d;
+    line-height: 1.8;
+}
+
+#about-us img {
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Products Section */
+#products {
+    padding: 80px 20px;
+    text-align: center;
+    background: white;
+}
+
+#products h3 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #1d3557;
+}
+
+.card .card-title {
+    color: #457b9d;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* Contact Section */
+#contact {
+    background: linear-gradient(135deg, #f1faee, #a8dadc);
+    padding: 80px 20px;
+    color: #1d3557;
+}
+
+#contact h3 {
+    font-size: 2.5rem;
+    color: #1d3557;
+    margin-bottom: 30px;
+}
+
+#contact .map-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#contact p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer-bg {
+    background: linear-gradient(135deg, #457b9d, #1d3557);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-bg p,
+.footer-bg a {
+    color: white;
+    font-size: 1rem;
+}
+
+.footer-bg img {
+    margin-top: 20px;
+    max-width: 120px;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25d366;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 50px;
+    height: 50px;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}

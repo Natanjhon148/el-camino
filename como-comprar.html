@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo Comprar - Imprenta & Serigrafía "El Camino"</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="como-comprar/como-comprar.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <span>IMPRENTA EL CAMINO</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nuestra-imprenta.html">Nuestra Imprenta</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="tienda.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="como-comprar.html">Cómo Comprar</a></li>
+                        <li class="nav-item"><a class="nav-link cta-btn" href="login.php">Iniciar Sesión</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="py-5">
+        <div class="container">
+            <h1 class="text-center fw-bold mb-5">Cómo Comprar</h1>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="fw-bold">Pasos para Realizar tu Compra</h2>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item">
+                            <strong>1. Explora nuestros productos:</strong> Navega en la sección <a href="tienda.html" class="text-primary">Tienda</a> para encontrar lo que necesitas.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>2. Agrega productos al carrito:</strong> Haz clic en "Agregar al carrito" en los productos que desees comprar.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>3. Revisa tu carrito:</strong> Dirígete al carrito de compras para verificar los productos seleccionados y sus cantidades.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>4. Completa tu pedido:</strong> Sigue las instrucciones en la página de pago. Puedes registrarte o continuar como invitado.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>5. Elige tu método de pago:</strong> Aceptamos pagos mediante QR, transferencias bancarias y otros métodos disponibles.
+                        </li>
+                        <li class="list-group-item">
+                            <strong>6. Recibe tu confirmación:</strong> Te enviaremos un correo electrónico con los detalles de tu pedido y el número de seguimiento.
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <img src="Imagen/comprar.jpg" class="img-fluid rounded shadow-lg" alt="Proceso de Compra">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-4">Preguntas Frecuentes</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            ¿Cuál es el tiempo de entrega?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            El tiempo de entrega varía según el producto. Generalmente, es de 3 a 7 días hábiles.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            ¿Puedo personalizar mi pedido?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            ¡Por supuesto! Ofrecemos servicios de personalización para adaptarnos a tus necesidades.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            ¿Cuáles son las opciones de pago?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Aceptamos pagos mediante QR, transferencias bancarias y otros métodos locales.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 ImprentaWeb. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

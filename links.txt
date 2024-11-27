@@ -1,0 +1,6 @@
+inicio
+http://localhost/el_camino/index.html
+empleados
+http://localhost/el_camino/login_empleado.php
+registrar empleados
+http://localhost/el_camino/register_empleado.php
